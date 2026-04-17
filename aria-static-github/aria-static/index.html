@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARIA — AI Home Buying Agent · Bangalore</title>
+  <meta name="description" content="Find your perfect home in Bangalore with AI. ARIA analyses properties, schools, safety and commute — then ranks them for you." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">🏡</div>
+        <div>
+          <div class="nav-title">ARIA</div>
+          <div class="nav-sub">Real Estate Intelligence</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#search">Search</a>
+        <a href="#how">How it works</a>
+        <a href="#areas">Areas</a>
+      </div>
+      <button class="nav-cta" onclick="scrollToSearch()">Find a Home ↗</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-tag"><span class="dot-pulse"></span> AI-Powered · Free to Use</div>
+      <h1 class="hero-title">Find Your <em>Perfect</em><br>Home in Bangalore</h1>
+      <p class="hero-sub">ARIA is an autonomous AI agent that analyses listings, schools, safety scores and commute times — then ranks and explains every recommendation.</p>
+
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-n">200+</span><span class="hstat-l">Listings</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Areas</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">AI</span><span class="hstat-l">Ranked</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-n">Free</span><span class="hstat-l">Forever</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SEARCH SECTION
+  ════════════════════════════════════════════ -->
+  <section class="search-section" id="search">
+    <div class="container">
+
+      <div class="search-card">
+        <div class="search-card-header">
+          <div class="search-card-title">Tell ARIA what you're looking for</div>
+          <div class="search-card-sub">Natural language · No forms · No filters to click</div>
+        </div>
+
+        <div class="filter-row" id="filters">
+          <button class="fbtn active" data-val="2BHK">2 BHK</button>
+          <button class="fbtn" data-val="3BHK">3 BHK</button>
+          <button class="fbtn" data-val="under80">Under 80L</button>
+          <button class="fbtn" data-val="under1cr">Under 1Cr</button>
+          <button class="fbtn" data-val="schools">Good Schools</button>
+          <button class="fbtn" data-val="safe">Safe Area</button>
+        </div>
+
+        <div class="input-row">
+          <input id="qinput" class="qinput" type="text"
+            placeholder="e.g. 2BHK under 80L in Whitefield, office at MG Road, good schools…"
+            autocomplete="off" />
+          <button class="search-btn" id="sendbtn" onclick="send()">
+            <span id="btn-text">Search ↗</span>
+            <span id="btn-spinner" class="spinner" style="display:none"></span>
+          </button>
+        </div>
+
+        <div class="example-chips">
+          <span class="elabel">Try:</span>
+          <button class="echip" onclick="chip(this)">2BHK under 80L · Whitefield · good schools</button>
+          <button class="echip" onclick="chip(this)">Koramangala 2BHK 90L · office MG Road</button>
+          <button class="echip" onclick="chip(this)">Safest 2BHK in HSR under 75L</button>
+          <button class="echip" onclick="chip(this)">Compare Whitefield vs Hebbal · 1Cr · family</button>
+        </div>
+      </div>
+
+      <!-- RESULTS AREA -->
+      <div id="results-area"></div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════════ -->
+  <section class="how-section" id="how">
+    <div class="container">
+      <div class="section-tag">How it works</div>
+      <h2 class="section-title">The AI reasons, <em>you decide</em></h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">You describe what you need</div>
+          <div class="step-body">In plain English — budget, location, bedrooms, priorities. No forms or dropdowns.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">ARIA calls its tools</div>
+          <div class="step-body">The agent fetches property listings, school ratings, crime data and commute times — all automatically.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Reasons over the data</div>
+          <div class="step-body">Uses AI to weigh trade-offs — price vs. safety vs. schools vs. commute — based on your priorities.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Returns a ranked shortlist</div>
+          <div class="step-body">Top 3–5 properties with scores, metrics and a plain-language explanation for every ranking.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       AREAS COVERED
+  ════════════════════════════════════════════ -->
+  <section class="areas-section" id="areas">
+    <div class="container">
+      <div class="section-tag">Coverage</div>
+      <h2 class="section-title">Areas we cover</h2>
+      <div class="areas-grid">
+        <div class="area-card">
+          <div class="area-icon">🏙️</div>
+          <div class="area-name">Whitefield</div>
+          <div class="area-meta">IT hub · 24+ schools · ITPL belt</div>
+          <div class="area-badges"><span class="abadge">Tech corridor</span><span class="abadge">Metro coming</span></div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🌆</div>
+          <div class="area-name">Koramangala</div>
+          <div class="area-meta">Top schools · Startup scene · 9.0/10 education</div>
+          <div class="area-badges"><span class="abadge">Best schools</span><span class="abadge">Vibrant</span></div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🌳</div>
+          <div class="area-name">HSR Layout</div>
+          <div class="area-meta">Safest area · 8.1/10 safety · Planned locality</div>
+          <div class="area-badges"><span class="abadge gold">Safest</span><span class="abadge">Family-friendly</span></div>
+        </div>
+        <div class="area-card">
+          <div class="area-icon">🌊</div>
+          <div class="area-name">Hebbal</div>
+          <div class="area-meta">Lake views · North Bangalore · Airport access</div>
+          <div class="area-badges"><span class="abadge">Lake views</span><span class="abadge">Low crime</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo" style="width:28px;height:28px;font-size:14px;">🏡</div>
+          <span class="footer-title">ARIA</span>
+        </div>
+        <div class="footer-note">Free forever · No backend · Runs in your browser · Open source on GitHub</div>
+        <div class="footer-copy">© 2025 ARIA · MIT License</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/agent.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
